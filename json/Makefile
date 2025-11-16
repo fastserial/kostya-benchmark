@@ -10,6 +10,8 @@ json-rs-targets := \
 	json.rs/target/release/json-jq-rs
 
 executables := \
+	target/lite3_gcc \
+	target/lite3_context_api_gcc \
 	target/json_cr \
 	target/json_pull_cr \
 	target/json_schema_cr \
@@ -315,6 +317,16 @@ target/json_odin: test.odin
 
 target/json_c3: test.c3
 	$(C3_BUILD)
+
+lite3/build/liblite3.a:
+	make -j -C lite3
+
+target/lite3_gcc: test_lite3.c lite3/build/liblite3.a | libnotify
+	$(GCC_BUILD) -Ilite3/include lite3/build/liblite3.a
+
+target/lite3_context_api_gcc: test_lite3_context_api.c lite3/build/liblite3.a | libnotify
+	$(GCC_BUILD) -Ilite3/include lite3/build/liblite3.a
+
 
 # Run
 
