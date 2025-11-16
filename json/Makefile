@@ -320,10 +320,10 @@ target/json_c3: test.c3
 lite3/build/liblite3.a:
 	make -j -C lite3
 
-target/lite3_gcc: test_lite3.c lite3/build/liblite3.a | libnotify
+target/lite3_gcc: test_lite3.c lite3/build/liblite3.a | target libnotify
 	$(GCC_BUILD) -Ilite3/include lite3/build/liblite3.a
 
-target/lite3_context_api_gcc: test_lite3_context_api.c lite3/build/liblite3.a | libnotify
+target/lite3_context_api_gcc: test_lite3_context_api.c lite3/build/liblite3.a | target libnotify
 	$(GCC_BUILD) -Ilite3/include lite3/build/liblite3.a
 
 
