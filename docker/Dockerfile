@@ -246,13 +246,6 @@ RUN curl -LO \
     && rm kotlin-compiler-$KOTLIN.zip
 ENV PATH="/root/bin/kotlinc/bin/:${PATH}"
 
-# https://download.racket-lang.org/
-ARG RACKET=8.17
-RUN curl -LO \
-    https://download.racket-lang.org/installers/$RACKET/racket-$RACKET-x86_64-linux-cs.sh \
-    && sh racket-$RACKET-x86_64-linux-cs.sh --unix-style --dest /root/ \
-    && rm racket-$RACKET-x86_64-linux-cs.sh
-
 # https://ziglang.org/download
 ARG ZIG=zig-x86_64-linux-0.14.1
 RUN curl \

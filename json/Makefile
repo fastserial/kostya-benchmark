@@ -89,7 +89,6 @@ all_runners := $(patsubst %,run[%], $(artifacts)) \
 	run[jruby][test.rb] \
 	run[test.php] \
 	run[test.clj] \
-	run[test.rkt] \
 	run[test.jl]
 
 # Build
@@ -407,9 +406,6 @@ run[test.php]:: run[%]: %
 run[test.clj]:: CLOJURE_FLAGS := -Sdeps '{:deps {cheshire/cheshire {:mvn/version "5.13.0"}}}'
 run[test.clj]:: run[%]: %
 	$(CLOJURE_RUN)
-
-run[test.rkt]:: run[%]: %
-	$(RACKET_RUN)
 
 # Utilities
 
