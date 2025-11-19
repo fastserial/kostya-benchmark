@@ -1,0 +1,83 @@
+language,avg_time,avg_memory
+C#/.NET Core,3.0008,505.9
+C#/.NET Core (System.Text.Json),0.677,588.7
+C++/clang++ (Boost.JSON),0.4341,420
+C++/clang++ (Boost.PropertyTree),3.0479,1427.2
+C++/clang++ (DAW JSON Link NoCheck),0.0875,112
+C++/clang++ (DAW JSON Link),0.0877,112
+C++/clang++ (Nlohmann),1.3244,472.5
+C++/clang++ (RapidJSON Precise),0.323,241
+C++/clang++ (RapidJSON SAX Precise),0.5477,194.5
+C++/clang++ (RapidJSON SAX),0.4593,194.4
+C++/clang++ (RapidJSON),0.2506,241
+C++/clang++ (gason),0.1502,207.6
+C++/clang++ (json-c),1.5466,1328.2
+C++/clang++ (simdjson DOM),0.1435,287.7
+C++/clang++ (simdjson On-Demand),0.0788,172
+C++/g++ (Boost.JSON),0.4234,421
+C++/g++ (Boost.PropertyTree),3.4169,1553
+C++/g++ (DAW JSON Link NoCheck),0.089,113
+C++/g++ (DAW JSON Link),0.094,113
+C++/g++ (Nlohmann),1.437,561
+C++/g++ (RapidJSON Precise),0.2557,241.1
+C++/g++ (RapidJSON SAX Precise),0.4953,113
+C++/g++ (RapidJSON SAX),0.4043,113
+C++/g++ (RapidJSON),0.1866,238.1
+C++/g++ (gason),0.1462,209.3
+C++/g++ (json-c),1.5583,1329
+C++/g++ (simdjson DOM),0.1515,284.6
+C++/g++ (simdjson On-Demand),0.0759,173
+C/clang (yajl),0.3767,110.4
+C/gcc (lite3),0.027,203
+C/gcc (lite3_context_api),0.027,203
+C/gcc (yajl),0.3705,110.4
+C3,2.3036,907
+CPython,1.149,447
+CPython (UltraJSON),0.8313,603.1
+Clojure,1.7349,894.9
+Crystal,0.9557,505
+Crystal (Pull),0.5357,131
+Crystal (Schema),0.5545,161
+D/ldc2 (Mir Amazon's Ion DOM),0.2767,193
+D/ldc2 (Mir Asdf DOM),0.1651,174
+Digital Mars D,4.3537,740
+F#/.NET Core (System.Text.Json),2.0941,597.3
+GNU D,4.9283,826
+Go,0.9084,114
+Go (Sonic),0.2246,121
+Go (goccy/go-json),0.2671,114
+Go (jsoniter),0.4699,114
+Go (rjson custom),0.1573,113
+Go (rjson),0.1952,113.2
+Go/gccgo,1.4649,138.6
+Haskell,2.3827,839.2
+Java (DSL-JSON),1.0503,820.1
+Julia (JSON3),0.885,838.5
+LDC,1.9986,752
+Nim/clang,1.4087,1111
+Nim/clang (Packedjson),0.7985,406
+Nim/clang (jsony),0.3786,259.1
+Nim/gcc,1.3629,1113
+Nim/gcc (Packedjson),0.7269,406
+Nim/gcc (jsony),0.4205,270.3
+Node.js,0.5351,446.1
+Odin,3.415,131
+Perl (Cpanel::JSON::XS),0.9096,528
+Perl (JSON::Tiny),9.2102,654
+PyPy,0.6691,409
+Ruby (--jit),0.9166,337.5
+Ruby (YAJL),1.6293,353
+Ruby/truffleruby,26.6145,8421
+Ruby/truffleruby (JVM),26.0664,1767.2
+Rust (Serde Custom),0.113,111
+Rust (Serde Typed),0.1226,122.9
+Rust (Serde Untyped),0.8636,951
+Rust (jq),2.8415,1019.3
+Scala (jsoniter-scala),0.2527,310
+V/clang,0.726,608
+V/gcc,0.7249,607
+Vala/clang,2.853,1095
+Vala/gcc,2.8522,1095
+Zig,0.2493,147
+jruby,5.0421,1371.7
+ruby,0.9388,334

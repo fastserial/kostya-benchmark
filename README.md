@@ -1,3 +1,72 @@
+# Kostya JSON Benchmark
+This repository has been forked from [the original](https://github.com/kostya/benchmarks) to add the Lite³ format to the benchmarks.
+
+![](lite3_benchmark_kostya_json_execution_time.png)
+![](lite3_benchmark_kostya_json_memory_usage.png)
+
+| Language / Library            | Execution Time       | Memory Usage         |
+| ----------------------------- | -------------------- | -------------------- |
+| C++/g++ (DAW JSON Link)       | 0.094 s              | 113 MB               |
+| C++/g++ (RapidJSON)           | 0.1866 s             | 238 MB               |
+| C++/g++ (gason)               | 0.1462 s             | 209 MB               |
+| C++/g++ (simdjson DOM)        | 0.1515 s             | 285 MB               |
+| C++/g++ (simdjson On-Demand)  | 0.0759 s             | 173 MB               |
+| C/gcc (lite3)                 | 0.027 s              | 203 MB               |
+| C/gcc (lite3_context_api)     | 0.027 s              | 203 MB               |
+| Go (Sonic)                    | 0.2246 s             | 121 MB               |
+| Rust (Serde Custom)           | 0.113 s              | 111 MB               |
+| Zig                           | 0.2493 s             | 147 MB               |
+
+Benchmark data:
+- [kostya_benchmark_output.txt](kostya_benchmark_output.txt)
+- [kostya_benchmark.csv](kostya_benchmark.csv)
+
+To replicate this benchmark, run:
+```bash
+git clone https://github.com/fastserial/kostya-benchmark.git
+cd kostya-benchmark/
+docker build docker/ -t benchmarks
+```
+Warning: this will build a 24 GB docker image.
+
+A single benchmark run can now be performed like so:
+```bash
+docker run -it --rm -v $(pwd):/src benchmarks json
+```
+However to produce more consistent results, CPU frequency scaling should first be disabled to minimize variance:
+```bash
+apt update
+apt install linux-cpupower
+cpupower frequency-set -g performance
+cpupower frequency-info
+```
+You should see:
+        
+        The governor "performance" may decide which speed to use
+
+The OS can also introduce variance by inconsistent scheduling of threads across NUMA-domains.
+To prevent this, the process and memory should be pinned.
+Also, not one but multiple runs will increase the consistency of the results.
+
+This command will perform 10 benchmark runs and write the results to `output.txt`:
+```bash
+lscpu >> output.txt && \
+numactl -H >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt && \
+docker run -it --rm --cpuset-cpus="0" --cpuset-mems="0" -v $(pwd):/src benchmarks json >> output.txt
+```
+
+
+# Original README:
+
 # Table of Content
 
 <!-- toc-begin -->
